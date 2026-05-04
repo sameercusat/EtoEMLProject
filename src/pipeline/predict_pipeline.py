@@ -2,13 +2,15 @@ import pandas as pd
 from src.exception import CustomException
 from src.utils import load_object
 import sys
+import os
 
 class DataPrediction:
     def __init__(self):
         pass
     def initiate_data_prediction(self,features):
-        preprocessor_path = r'var\app\current\src\components\artifacts\preprocessor.pkl'
-        model_path =  r'var\app\current\src\components\artifacts\model.pkl'
+        curr_dir = os.getcwd()
+        preprocessor_path = os.path.join(curr_dir,'src','components','artifacts','preprocessor.pkl')
+        model_path =  os.path.join(curr_dir,'src','components','artifacts','model.pkl')
         preprocessor = load_object(preprocessor_path)
         model = load_object(model_path)
         processed_data = preprocessor.transform(features)
