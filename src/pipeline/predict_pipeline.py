@@ -7,8 +7,8 @@ class DataPrediction:
     def __init__(self):
         pass
     def initiate_data_prediction(self,features):
-        preprocessor_path = r'src\components\artifacts\preprocessor.pkl'
-        model_path =  r'src\components\artifacts\model.pkl'
+        preprocessor_path = r'var\app\current\src\components\artifacts\preprocessor.pkl'
+        model_path =  r'var\app\current\src\components\artifacts\model.pkl'
         preprocessor = load_object(preprocessor_path)
         model = load_object(model_path)
         processed_data = preprocessor.transform(features)
