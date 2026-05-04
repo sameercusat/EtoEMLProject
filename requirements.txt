@@ -1,9 +1,9 @@
 pandas
 numpy
-seaborn
+# seaborn
 scikit-learn
-catboost
-xgboost
-dill
+# catboost
+# xgboost
+# dill
 flask
 # -e .
