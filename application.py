@@ -8,11 +8,13 @@ app=application
 
 @app.route('/')
 def home():
+    print("We are in Home to check Logs")
     return render_template('index.html')
 
 @app.route('/predictscore',methods=['GET','POST'])
 def predict_math_score():
     if request.method == 'GET':
+        print("We are in Predict Score GET")
         return render_template('predict_score.html',result=0)
     else:
             try:
