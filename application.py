@@ -27,16 +27,16 @@ def predict_math_score():
                 rscore = request.form.get('rscore')
                 wscore = request.form.get('wscore')
                 data_reader = DataReading(gender,race,education,lunch,course,rscore,wscore)
-                print(gender,race,education,lunch,course,rscore,wscore)
+                #print(gender,race,education,lunch,course,rscore,wscore)
                 df = data_reader.create_dataframe()
-                print("DataFrame:",df)
+                #print("DataFrame:",df)
                 data_predictor = DataPrediction()
-                print("Sameer in the End")
+                #print("Sameer in the End")
                 result = data_predictor.initiate_data_prediction(df)
                 print("What is Result ?")
                 return render_template('predict_score.html',result=result)
             except Exception as e:
-                 print("Error is there:",e)
+                 #print("Error is there:",e)
                  raise CustomException(e,sys)
 
 if __name__ == '__main__':
